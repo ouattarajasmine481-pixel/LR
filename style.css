@@ -6,11 +6,13 @@ body {
     padding: 30px 15px;
     color: white;
 }
+
 h1 {
     color: white;
     font-size: 30px;
     margin-top: 30px;
 }
+
 .enveloppe {
     background-color: navy;
     width: 300px;
@@ -23,13 +25,21 @@ h1 {
     border-radius: 8px;
     box-shadow: 0 5px 20px gray;
     cursor: pointer;
+    perspective: 1000px;
 }
+
 .coeur {
     color: red;
     font-size: 70px;
     position: absolute;
     z-index: 1;
 }
+
+.nom-romi {
+    position: absolute;
+    z-index: 3;
+}
+
 .rabat {
     width: 0;
     height: 0;
@@ -43,6 +53,11 @@ h1 {
     transition: transform 0.8s;
     z-index: 2;
 }
+
+.enveloppe.ouverte .rabat {
+    transform: rotateX(180deg);
+}
+
 .lettre {
     display: none;
     background-color: white;
@@ -55,15 +70,19 @@ h1 {
     box-shadow: 0 5px 20px gray;
     line-height: 1.8;
     text-align: left;
+    box-sizing: border-box;
 }
+
 .lettre h2 {
     color: navy;
     text-align: center;
 }
+
 .lettre h3 {
     color: red;
     text-align: right;
 }
+
 .chats {
     position: fixed;
     bottom: 10px;
@@ -74,6 +93,7 @@ h1 {
     font-size: 35px;
     animation: marcher 12s linear infinite;
 }
+
 @keyframes marcher {
     from {
         transform: translateX(100%);
@@ -82,18 +102,30 @@ h1 {
         transform: translateX(-100%);
     }
 }
+
 .instruction {
-color: white;
-position: absolute;
-bottom: 10px;
-z-index: 14px;
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    z-index: 3;
 }
+
 .enveloppe.cachee {
     display: none;
 }
-.enveloppe {
-    perspective: 1000px;
-}
-.enveloppe.ouverte.rabat{
-    transform: rotatex(180deg);
+
+@media (max-width: 480px) {
+    .enveloppe {
+        width: 280px;
+    }
+
+    .rabat {
+        border-left-width: 140px;
+        border-right-width: 140px;
+    }
+
+    .lettre {
+        width: 100%;
+        padding: 20px;
+    }
 }
