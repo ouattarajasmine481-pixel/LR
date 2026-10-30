@@ -1,0 +1,99 @@
+body {
+    background-color: black;
+    text-align: center;
+    font-family: Georgia, serif;
+    margin: 0;
+    padding: 30px 15px;
+    color: white;
+}
+h1 {
+    color: white;
+    font-size: 30px;
+    margin-top: 30px;
+}
+.enveloppe {
+    background-color: navy;
+    width: 300px;
+    height: 200px;
+    margin: 80px auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px gray;
+    cursor: pointer;
+}
+.coeur {
+    color: red;
+    font-size: 70px;
+    position: absolute;
+    z-index: 1;
+}
+.rabat {
+    width: 0;
+    height: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-top: 100px solid blue;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: top;
+    transition: transform 0.8s;
+    z-index: 2;
+}
+.lettre {
+    display: none;
+    background-color: white;
+    color: black;
+    width: 80%;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px gray;
+    line-height: 1.8;
+    text-align: left;
+}
+.lettre h2 {
+    color: navy;
+    text-align: center;
+}
+.lettre h3 {
+    color: red;
+    text-align: right;
+}
+.chats {
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 35px;
+    animation: marcher 12s linear infinite;
+}
+@keyframes marcher {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+.instruction {
+color: white;
+position: absolute;
+bottom: 10px;
+z-index: 14px;
+}
+.enveloppe.cachee {
+    display: none;
+}
+.enveloppe {
+    perspective: 1000px;
+}
+.enveloppe.ouverte.rabat{
+    transform: rotatex(180deg);
+}
