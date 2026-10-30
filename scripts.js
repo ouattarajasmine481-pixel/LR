@@ -1,4 +1,4 @@
-function ouvrirlettre() {
+function ouvrirLettre() {
     let enveloppe =
     document.getElementById("enveloppe");
     let lettre =
